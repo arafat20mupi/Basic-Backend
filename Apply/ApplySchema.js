@@ -26,4 +26,4 @@ const ApplySchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("application", ApplySchema); // Corrected model export
+module.exports = mongoose.model("application", ApplySchema); 

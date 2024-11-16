@@ -29,7 +29,7 @@ app.use("/projects", ProjectsRoute);
 app.use("/apply", ApplyRoute);
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the API');
+    res.send('Welcome to CodeCraftor');
 });
 
 // Start server

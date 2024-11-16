@@ -1,13 +1,11 @@
-const User = require('./ApplySchema');  // Import the User model
-
-// Controller to handle the form submission and file upload (as a string)
+const User = require('./ApplySchema');  
 const createApplyUser = async (req, res) => {
     try {
         const { fullName, email, experience, phone, resume,jobName  } = req.body;
 
         // Check if the resume is a valid string (URL or base64)
-        if (!resume || typeof resume !== 'string') {
-            return res.status(400).json({ message: 'Invalid resume format. Please provide a valid string.' });
+        if (!resume ) {
+            return res.status(400).json({ message: 'Invalid resume' });
         }
 
         // Create a new user document
@@ -29,7 +27,7 @@ const createApplyUser = async (req, res) => {
         });
     } catch (error) {
         console.error('Error in creating user:', error);
-        res.status(500).json({
+        res.status(500).send({
             message: 'Error in submitting application',
             error: error.message,
         });
