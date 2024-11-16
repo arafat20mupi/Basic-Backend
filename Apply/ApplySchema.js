@@ -16,6 +16,9 @@ const ApplySchema = new mongoose.Schema(
         },
         resume: {
             type: String,
+        },
+        jobName : {
+            type: String,
         }
     },
     {

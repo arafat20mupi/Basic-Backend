@@ -3,7 +3,7 @@ const User = require('./ApplySchema');  // Import the User model
 // Controller to handle the form submission and file upload (as a string)
 const createApplyUser = async (req, res) => {
     try {
-        const { fullName, email, experience, phone, resume } = req.body;
+        const { fullName, email, experience, phone, resume,jobName  } = req.body;
 
         // Check if the resume is a valid string (URL or base64)
         if (!resume || typeof resume !== 'string') {
@@ -16,7 +16,8 @@ const createApplyUser = async (req, res) => {
             email,
             experience,
             phone,
-            resume,  // Store resume as string (URL or base64)
+            resume,
+            jobName
         });
 
         // Save the user to the database
