@@ -4,12 +4,9 @@ const ApplySchema = new mongoose.Schema(
     {
         fullName: {
             type: String,
-            required: true,
         },
         email: {
             type: String,
-            required: true,
-            unique: true,
         },
         experience: {
             type: String,
@@ -17,7 +14,7 @@ const ApplySchema = new mongoose.Schema(
         phone: {
             type: Number,
         },
-        file: {
+        resume: {
             type: String,
         }
     },
@@ -26,4 +23,4 @@ const ApplySchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("apply", ApplySchema); // Corrected model export
+module.exports = mongoose.model("application", ApplySchema); // Corrected model export

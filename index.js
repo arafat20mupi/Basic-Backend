@@ -1,8 +1,6 @@
 const express = require('express');
 const connectDB = require('./Config/dbConfig');
 const cors = require('cors');
-const multer = require('multer');
-const path = require('path');
 const UserRoute = require('./User/UserRoute');
 const ProjectsRoute = require('./Projects/ProjectsRoute');
 const ApplyRoute = require('./Apply/ApplyRoute');
@@ -24,8 +22,6 @@ app.use(cors(
 // Connect to Database
 connectDB();
 
-// Serve static files (e.g., uploaded files)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 app.use("/user", UserRoute);
