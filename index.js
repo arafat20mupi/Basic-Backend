@@ -15,10 +15,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors(
     {
-      origin: ['http://localhost:5173' , 'http://localhost:5174'], 
-      credentials: true, 
+        origin: ['http://localhost:5173', 'http://localhost:5174'],
+        credentials: true,
     }
-  
+
 ));
 
 // Connect to Database
@@ -32,7 +32,11 @@ app.use("/user", UserRoute);
 app.use("/projects", ProjectsRoute);
 app.use("/apply", ApplyRoute);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+});
+
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
