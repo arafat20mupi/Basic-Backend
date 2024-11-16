@@ -3,7 +3,7 @@ const UserSchema = require('../User/UserSchema');
 // Register function
 const register = async (req, res) => {
     try {
-        const { name, email, password, number } = req.body;
+        const { name, email, password, number , } = req.body;
 
         // Check for required fields
         if (!email || !password) {

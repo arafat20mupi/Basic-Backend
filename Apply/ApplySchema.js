@@ -1,32 +1,29 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema(
+const ApplySchema = new mongoose.Schema(
     {
-        name : {
+        fullName: {
             type: String,
+            required: true,
         },
         email: {
             type: String,
             required: true,
             unique: true,
         },
-        password: {
+        experience: {
             type: String,
-            required: true,
-
         },
-        number: {
-            type: Number ,
+        phone: {
+            type: Number,
         },
-        role : {
+        file: {
             type: String,
-            enum: ['admin', 'user'],
-            default: 'user'
         }
     },
     {
         timestamps: true,
     }
-)
+);
 
-module.exports = mongoose.model("users" , UserSchema)
+module.exports = mongoose.model("apply", ApplySchema); // Corrected model export
