@@ -19,6 +19,11 @@ const ApplySchema = new mongoose.Schema(
         },
         jobName : {
             type: String,
+        },
+        status: {
+            type: String,
+            default: 'Pending',
+            enum: ['Pending', 'Accepted', 'Reject']
         }
     },
     {

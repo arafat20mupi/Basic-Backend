@@ -1,10 +1,11 @@
-const express = require('express')
-const { register, login } = require('./UserController')
+const express = require('express');
+const { allUsers, updateRole, deleteUser } = require('./UserController');
 
-const app = express.Router()
+const app = express.Router();
 
-app.post('/register', register)
 
-app.post('/login', login)
+app.get('/users',allUsers)
+app.patch('/update-role',updateRole)
+app.delete('/delete/user/:uid',deleteUser)
 
-module.exports = app
+module.exports = app;
